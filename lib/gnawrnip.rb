@@ -33,6 +33,7 @@ module Gnawrnip
     def ready!
       require 'gnawrnip/ext/capybara/session' if animation?
       require 'gnawrnip/step_screenshot'
+      require 'gnawrnip/ext/turnip/execute'
     end
 
     def animation?
