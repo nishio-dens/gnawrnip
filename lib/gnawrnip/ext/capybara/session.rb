@@ -24,9 +24,9 @@ module Capybara
     SAVE_SCREENSHOT_METHODS.each do |method|
       alias_method "after_hook_#{method}".to_sym, method
 
-      define_method method do |*args, **kwords, &block|
+      define_method method do |*args, **kwargs, &block|
         Gnawrnip.photographer.take_shot if current_url != 'about:blank'
-        send("after_hook_#{method}", *args, **kwords, &block)
+        send("after_hook_#{method}", *args, **kwargs, &block)
       end
     end
   end
