@@ -15,7 +15,6 @@ RSpec.configure do |config|
     example = RSpec.current_example
 
     if example.exception
-      Gnawrnip.photographer.take_shot
       screenshots = Gnawrnip.photographer.frames.compact
       example.metadata[:gnawrnip][:screenshot] = screenshots
     else
